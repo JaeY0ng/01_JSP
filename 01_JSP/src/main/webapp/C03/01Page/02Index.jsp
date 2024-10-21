@@ -7,9 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	
-	 
-
+	<form action="02Main.jsp">
+		<input type="text" name="name"/><br>
+		<input type="text" name="age"/><br>
+		<input type="text" name="addr"/><br>
+	</form>
 </body>
 </html>
