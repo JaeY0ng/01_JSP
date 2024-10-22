@@ -29,11 +29,12 @@
 		response.setHeader("Content-Disposition", "attachment; filename=TEST.txt");
 		
 		//inOutStream 전송
+		byte [] buffer = new byte[4096];
 		while(true){
-			int data = in.read();
+			int data = in.read(buffer);
 			if(data==-1)
 				break;
-			bout.write((byte)data);
+			bout.write(buffer,0,data);
 			bout.flush();
 		}
 		bout.close();
