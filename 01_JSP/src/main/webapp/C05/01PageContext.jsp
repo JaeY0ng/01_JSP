@@ -21,5 +21,7 @@
 		
 		<!-- EL PROJECT PATH -->
 		PROJECT PATH = ${pageContext.request.contextPath}
+		
+		
 </body>
 </html>
