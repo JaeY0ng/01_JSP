@@ -9,6 +9,7 @@
 <body>
 
 	<h1>MAIN PAGE</h1>
+	<h2>회원가입 완료</h2>
 
 </body>
 </html>
