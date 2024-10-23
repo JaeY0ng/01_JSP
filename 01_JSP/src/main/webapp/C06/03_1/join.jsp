@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<h1>회원가입</h1>
 	<form action="${pageContext.request.contextPath}/C06/03/proc/joinProc.jsp" method="post">	
 		<div>
 			<label>${msg_userid}</label><br>

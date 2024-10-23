@@ -1,29 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-	<%@page import="C04.*" %>
+
 <%
 	//파라미터 받기
-	String username = request.getParameter("username");
+	String userid = request.getParameter("userid");
 	String password = request.getParameter("password");
 	
 	//유효성 체크
-	if(!isValid(username,password,request)){
+	if(!isValid(userid,password,request)){
 		//유효성 체크 오류 발생한 경우
 		request.getRequestDispatcher("../join.jsp").forward(request,response);
 		return ;
 	}
 	//DB내의 USER 검색(tbl_user안에서 동일한 userid 검색해서 가져오기)
-	UserDTO dbUser =  select(username);
+	UserDto dbUser =  select(userid);
 	if(dbUser==null){
 		//조회된 User가 없음 -> Insert 처리
-		UserDTO dto = new UserDTO();
-		dto.setUsername(userid);
+		UserDto dto = new UserDto();
+		dto.setUserid(userid);
 		dto.setPassword(password);
 		int result = insert(dto);
 		if(result>0)
-			out.print("<script>alert('회원가입 성공!')</script>");
+			out.print("<script>alert('회원가입 성공!');location.href='/01_JSP/C06/03/login.jsp';</script>");
 		else
-			out.print("<script>alert('회원가입 실패!')</script>");
+			out.print("<script>alert('회원가입 실패!');location.href='/01_JSP/C06/03/join.jsp';</script>");
 		
 	}else{
 		//조회된 User가 있음 -> 
@@ -34,7 +34,7 @@
 	
 %>
 
-<%@page import="java.sql.*,C04.*" %>
+<%@page import="java.sql.*,C06.*" %>
 <%!
 	private String url = "jdbc:mysql://localhost/bookDB?serverTimezone=UTC";
 	private String id = "root";

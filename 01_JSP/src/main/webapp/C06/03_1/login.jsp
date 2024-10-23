@@ -8,12 +8,22 @@
 </head>
 <body>
 	<h1>로그인</h1>
-	<form action="${pageContext.request.contextPath}/C06/03/proc/LoginProc.jsp" method="post">
+	<form action="${pageContext.request.contextPath}/C06/03/proc/loginProc.jsp" method="post">	
 		<div>
-			<label for=""></label><br />
-			<input type="text" />
-		</div>
-	
+			<label>${msg_userid}</label><br>
+			<input type="text" name="userid" />
+		</div>	
+		<div>
+			<label>${msg_password}</label><br>
+			<input type="text" name="password" />
+		</div>	
+		<div>
+			<input type="submit" value="로그인" />
+		</div>	
 	</form>
+	<div>
+		${msg_db}
+	</div>
+	
 </body>
 </html>
