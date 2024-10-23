@@ -16,7 +16,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-		<form action="LoginProc.jsp" method="post">
+		<form action="LoginProcs.jsp" method="post">
 		<div>
 			<label><%=userIdMsg %></label><br>
 			<input name="userid" />
@@ -28,12 +28,13 @@
 		<br />
 		<div>
 			<button>로그인</button>
+			<button><a href="SignIn.jsp" style="text-decoration:none;color:black;">회원가입</a></button>
 		</div>
 	</form>
 	<br />
-	<form action="" method="post">
-		<button><a href="" style="text-decoration:none;color:black;">회원가입</a></button>
-	</form>
+	
+		
+
 	
 </body>
 </html>
